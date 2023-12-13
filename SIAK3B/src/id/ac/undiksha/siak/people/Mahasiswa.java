@@ -1,12 +1,30 @@
 package id.ac.undiksha.siak.people;
 
-public class Mahasiswa {
+import id.ac.undiksha.siak.organisasi.Prodi;
+
+public class Mahasiswa extends Manusia {
 	private String nim;
-	private String nama;
-	private String alamat;
-	private String prodi;
-	private String tanggalLahir;
-	private boolean jeniskelamin;
+	//private String prodi;
+	private Prodi prodi = new Prodi();
+	
+	public Mahasiswa() {
+		this.nim			= "<Masukkan NIM>";
+		//this.prodi 			= "<Masukkan Prodi>";
+	}
+	
+	
+	public Mahasiswa(String nama, String alamat, String tanggalLahir, boolean jeniskelamin, String nim, String prodi) {
+		super(nama, alamat, tanggalLahir, jeniskelamin);
+		this.nim = nim;
+		//prodi = prodi;
+	}
+
+
+	public Mahasiswa(String nim, String nama, String alamat, String prodi, String tanggalLahir, boolean jeniskelamin) {
+		super();
+		this.nim = nim;
+		//this.prodi = prodi;
+	}
 	
 	
 	public void setNim(String nim) {
@@ -17,53 +35,21 @@ public class Mahasiswa {
 		return this.nim;
 	}
 
-	public String getNama() {
-		return nama;
-	}
-
-	public void setNama(String nama) {
-		this.nama = nama;
-	}
-
-	public String getAlamat() {
-		return alamat;
-	}
-
-	public void setAlamat(String alamat) {
-		this.alamat = alamat;
-	}
-
-	public String getProdi() {
-		return prodi;
-	}
+	//public String getProdi() {
+		//return prodi;
+	//}
 
 	public void setProdi(String prodi) {
-		this.prodi = prodi;
-	}
-
-	public String getTanggalLahir() {
-		return tanggalLahir;
-	}
-
-	public void setTanggalLahir(String tanggalLahir) {
-		this.tanggalLahir = tanggalLahir;
-	}
-
-	public boolean isJeniskelamin() {
-		return jeniskelamin;
+		//this.prodi = prodi;
 	}
 	
-	public String getJenisKelamin() {
-		if (this.isJeniskelamin()) {
-			return "Perempuan";
-		} else {
-			return "Laki-Laki";
-		}
-		
-	}
-
-	public void setJeniskelamin(boolean jeniskelamin) {
-		this.jeniskelamin = jeniskelamin;
+	public void printAll() {
+		super.printAll();
+		System.out.println(this.getNim());
+		System.out.println(this.getProdi().getNamaProdi());
 	}
 	
+    public Prodi getProdi() {
+        return prodi;
+    }
 }

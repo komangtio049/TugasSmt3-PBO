@@ -1,67 +1,45 @@
 package id.ac.undiksha.siak.people;
 
-public class Dosen {
+public class Dosen extends Manusia{
 
 	public String nip;
-	public String nama_dosen;
-	public String jurusan; 
 	public String bidang_keahlian; 
-	public String tanggalLahir;
-	public String alamat;
-	public boolean JenisKelamin;
+	
+	public Dosen() {
+		this.nip				= "<Masukkan NIP>";
+		this.bidang_keahlian	= "<Masukkan Prodi>";
+	}
+	
+	public Dosen(String nip, String bidang_keahlian) {
+		super();
+		this.nip = nip;
+		this.bidang_keahlian = bidang_keahlian;
+	}
 	
 	
+	public Dosen(String nama, String alamat, String tanggalLahir, boolean jeniskelamin, String nip, String bidang_keahlian) {
+		super(nama, alamat, tanggalLahir, jeniskelamin);
+		this.nip = nip;
+		this.bidang_keahlian = bidang_keahlian;
+	}
+
 	public String getNip() {
 		return nip;
 	}
 	public void setNip(String nip) {
 		this.nip = nip;
 	}
-	public String getNama_dosen() {
-		return nama_dosen;
-	}
-	public void setNama_dosen(String nama_dosen) {
-		this.nama_dosen = nama_dosen;
-	}
-	public String getJurusan() {
-		return jurusan;
-	}
-	public void setJurusan(String jurusan) {
-		this.jurusan = jurusan;
-	}
+
 	public String getBidang_keahlian() {
 		return bidang_keahlian;
 	}
 	public void setBidang_keahlian(String bidang_keahlian) {
 		this.bidang_keahlian = bidang_keahlian;
 	}
-	public String getTanggalLahir() {
-		return tanggalLahir;
-	}
-	public void setTanggalLahir(String tanggalLahir) {
-		this.tanggalLahir = tanggalLahir;
-	}
-	public String getAlamat() {
-		return alamat;
-	}
-	public void setAlamat(String alamat) {
-		this.alamat = alamat;
-	}
 	
-	public boolean isJenisKelamin() {
-		return JenisKelamin;
+	public void printAll() {
+		super.printAll();
+		System.out.println(this.getNip());
+		System.out.println(this.getBidang_keahlian());
 	}
-
-    public String getJenisKelamin() {
-        if (this.isJenisKelamin()) {
-            return "Perempuan";
-        } else {
-            return "Laki-laki";
-        }
-    }
-
-    public void setJenisKelamin(boolean jenisKelamin) {
-        this.JenisKelamin = jenisKelamin;
-    }
-	
 }
